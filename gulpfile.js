@@ -35,7 +35,7 @@ gulp.task('default', ['clean'], function() {
 });
 
 gulp.task('usemin',['jshint'], function () {
-    return gulp.src('./app/dishdetail.html')
+    return gulp.src('./app/index.html')
         .pipe(usemin({
             css:[minifycss(),rev()],
             js: [ngannotate(),uglify(),rev()]
@@ -61,7 +61,7 @@ gulp.task('copyfonts', ['clean'], function() {
 // Watch
 gulp.task('watch', ['browser-sync'], function() {
     // Watch .js files
-    gulp.watch('{app/scripts/**/*.js,app/styles/**/*.css,app/**/*.html}', ['usemin']);
+    gulp.watch('{app/scripts/**/*.js,app/styles/**/*.css,app/**/*.html,app/views/**/*.html}', ['usemin']);
     // Watch image files
     gulp.watch('app/images/**/*', ['imagemin']);
 
@@ -70,6 +70,7 @@ gulp.task('watch', ['browser-sync'], function() {
 gulp.task('browser-sync', ['default'], function () {
     var files = [
         'app/**/*.html',
+        'app/views/**/*.html',
         'app/styles/**/*.css',
         'app/images/**/*.png',
         'app/scripts/**/*.js',
@@ -79,7 +80,7 @@ gulp.task('browser-sync', ['default'], function () {
     browserSync.init(files, {
         server: {
             baseDir: "dist",
-            index: "dishdetail.html"
+            index: "index.html"
         }
     });
     // Watch any files in dist/, reload on change
