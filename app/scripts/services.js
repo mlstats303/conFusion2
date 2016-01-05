@@ -12,8 +12,7 @@ angular.module('confusionApp')
                 // that returns a selected promotion.
                 this.getPromotion = function (index) {
                     return $resource(baseURL + "promotions/:id").get({id: index});
-                }
-                        
+                };
         }])
 
         .factory('corporateFactory', ['$resource','baseURL', function($resource,baseURL) {
