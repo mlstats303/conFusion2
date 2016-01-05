@@ -46,7 +46,7 @@
            </div>
             <div class="col-xs-12 col-sm-9" ng-controller="FeedbackController">
                 <form class="form-horizontal" role="form" name="feedbackForm" ng-submit="sendFeedback()" novalidate>
-                    <div class="form-group" ng-class="{'has_error' : feedbackForm.firstname.$error.required
+                    <div class="form-group" ng-class="{'has-error' : feedbackForm.firstname.$error.required
                      && !feedbackForm.firstname.$pristine}">
                         <label for="firstname" class="col-sm-2 control-label">First Name</label>
                         <div class="col-sm-10">
@@ -56,7 +56,7 @@
                                            class="help-block">Your First name is required.</span>
                         </div>
                     </div>
-                    <div class="form-group" ng-class="{'has_error': feedbackForm.lastname.$error.required
+                    <div class="form-group" ng-class="{'has-error': feedbackForm.lastname.$error.required
                     && !feedbackForm.lastname.$pristine}">
                         <label for="lastname" class="col-sm-2 control-label">Last Name</label>
                         <div class="col-sm-10">
@@ -81,7 +81,7 @@
                                     ng-model="feedback.tel.number">
                         </div>
                     </div>
-                    <div class="form-group" ng-class="{'has_error has_feedback': feedbackForm.emailid.$invalid &&
+                    <div class="form-group" ng-class="{'has-error has-feedback': feedbackForm.emailid.$invalid &&
                     !feedbackForm.emailid.$pristine}">
                         <label for="emailid" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
@@ -94,7 +94,7 @@
                             !feedbackForm.emailid.$pristine" class="help-block">Enter a valid email address.</span>
                         </div>
                     </div>
-                    <div class="form-group" ng-class="{'has_error': invalidChannelSelection}">
+                    <div class="form-group" ng-class="{'has-error': invalidChannelSelection}">
                        <div class="checkbox col-sm-5 col-sm-offset-2">
                             <label class="checkbox-inline">
                                 <input type="checkbox"
